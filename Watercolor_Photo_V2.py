@@ -7,7 +7,7 @@ import math
 
 # Function that take photo file path and a zoom factor to adjust photo output size
 def path_to_watercolor(in_path, zoom):
-    # Deifine image output path
+    # Define image output path
     out_path = in_path[:-4]+"_watercolor.jpg"
 
     # Read in image
