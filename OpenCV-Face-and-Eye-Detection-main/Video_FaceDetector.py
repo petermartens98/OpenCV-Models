@@ -1,6 +1,6 @@
 import cv2
 
-# Download XML file for trained frontal face data from opencv:
+# Download XML file for trained frontal face data from GitHub:
 # https://raw.githubusercontent.com/opencv/opencv/4.x/data/haarcascades/haarcascade_frontalface_default.xml
 trained_face_data = cv2.CascadeClassifier('haarcascade_frontalface_default.xml')
 
@@ -12,11 +12,8 @@ while True:
     # Read current frame
     succesful_frame_read, frame = webcam.read()
 
-    # Convert Frame to Grayscale
-    grayscaled_img = cv2.cvtColor(frame, cv2.COLOR_BGR2GRAY)
-
-    # Detect Faces
-    face_coordinates = trained_face_data.detectMultiScale(grayscaled_img)
+    # Detect Face Cooridnates
+    face_coordinates = trained_face_data.detectMultiScale(frame)
 
     # Draw rectangle around faces
     for (x, y, w, h) in face_coordinates:
