@@ -1,3 +1,5 @@
+// Python Video/Webcam Face Detector using OpenCV
+// Necessary Imports
 import cv2
 
 # Download XML file for trained frontal face data from GitHub:
@@ -18,8 +20,11 @@ while True:
     # Draw rectangle around faces
     for (x, y, w, h) in face_coordinates:
         cv2.rectangle(frame, (x, y), (x + w, y + h), (0, 255, 0), 2)
-
+    
+    # Display frame with rectangle drawn on
     cv2.imshow("Webcam Face Detector", frame)
+    
+    # Update window every 1 ms
     key=cv2.waitKey(1)
 
     # Hit q key to quit out of the program
