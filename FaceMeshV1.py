@@ -4,7 +4,6 @@
 # Import necessary libraries
 import cv2
 import mediapipe as mp
-import time
 
 # Define face mesh solutions model
 mp_face_mesh = mp.solutions.face_mesh
@@ -26,18 +25,9 @@ with mp_face_mesh.FaceMesh(
         while cap.isOpened():
             # Read in webcam image
             success, image = cap.read()
-
-            # Define starting time
-            start = time.time()
-
-            # Flip and covert to RGB for front facing app development
-            image = cv2.cvtColor(cv2.flip(image, 1), cv2.COLOR_BGR2RGB)
-
+            
             # Process image through facemesh
             results = face_mesh.process(image)
-
-            # Convert image color back to BGR so it can be displayed
-            image = cv2.cvtColor(image, cv2.COLOR_RGB2BGR)
 
             # Allows for multiple faces to be detected
             if results.multi_face_landmarks:
