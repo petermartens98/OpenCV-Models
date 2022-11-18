@@ -1,5 +1,5 @@
-// Python Video/Webcam Face Detector using OpenCV
-// Necessary Imports
+# Python Video/Webcam Face Detector using OpenCV
+# Necessary Imports
 import cv2
 
 # Download XML file for trained frontal face data from GitHub:
